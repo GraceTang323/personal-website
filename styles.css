@@ -149,7 +149,10 @@ section{
 }
 
 .main-container .image img{
-    width: 100%;
+    width: 380px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .main-container .content{
