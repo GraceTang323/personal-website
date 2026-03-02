@@ -15,9 +15,9 @@
       </div>
       <div class="nav-links">
         <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></div>
-        <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="#">About</a></div>
+        <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="#about">About</a></div>
         <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="#">Skills</a></div>
-        <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#">Projects</a></div>
+        <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#projects">Projects</a></div>
         <div class="contact-button"data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" ><a href="#">Contact</a></div>
       </div>
       <i class="fa-solid fa-bars hamburg" onclick= "hamburg()"></i>
@@ -25,9 +25,9 @@
     <div class="dropdown">
       <div class="links">
         <a href="index.html">Home</a>
-        <a href="#">About</a>
+        <a href="#about">About</a>
         <a href="#">Skills</a>
-        <a href="#">Projects</a>
+        <a href="#projects">Projects</a>
         <a href="#">Contact</a>
         <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
       </div>
@@ -36,7 +36,7 @@
     <section>
       <div class="main-container">
         <div class="image" data-aos="zoom-in-right" data-aos-duration="1300" data-aos-delay="200">
-          <img src="temp_photo_square.png" alt="" width="400" height="400">
+          <img src="images/temp_photo_square.png" alt="" width="400" height="400">
         </div>
         <div class="content">
           <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600">Hey there! I'm <span>Grace</span></h1>
@@ -44,10 +44,10 @@
             <p>I'm a <span>software developer</span> focused on designing and optimizing backend systems and full-stack applications. I care about <span>smoothening</span> user experiences, building reliable, <span>scalable</span> systems, and the creative process!</p>
           </div>
           <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="900">
-            <a href="#"><i class="fa-brands fa-github"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/GraceTang323" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.facebook.com/grace.tang.919865/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/grace-tang-2b9a91384/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
           </div>
           <div class="button" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1100">
             <button>Download CV</button>
@@ -67,5 +67,63 @@
         const navbar = document.querySelector(".dropdown").classList.remove("active");
       }
     </script>
+
+    <section id="about">
+      <div class="about-page">
+        <div class="about-me">
+          <h1>About Me</h1>
+          <div class="about-content">
+            <p>
+              I'm a full-stack software engineer who goes with the flow. When faced with an obstacle, I'm confident I can always find another way around, whether it's slithering along with Python or stacking with JavaScript. 
+              As a part-time artist, I care a lot about the organization of layers, which reflects in my work. I'm comfortable working across the stack, writing clean, durable code under 
+              tight deadlines, and iterating quickly based on user and technical feedback. Outside the scope, you'll usually find me leisurely sketching, swimming with sharks, or touring new places abroad!
+            </p>
+            <b>Actively seeking internship or entry-level roles that'll allow me to apply my technical fundamentals and learn from production-grade teams.</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="projects-page">
+        <h1>Projects</h1>
+        <div class="projects-grid">
+          <div class="project-card">
+            <img src="images/GE-HealthCare-logo.webp" alt="Log Whisperer Project Screenshot" class="project-image">
+            <h3>Log Analyzer</h3>
+            <p>
+              Built a scalable backend pipeline for efficient log ingesting and indexing 
+              using Docker, OpenSearch, and MinIO
+            </p>
+            <div class="project-links">
+              <a href="https://git.doit.wisc.edu/KTREDDY2/arc-log-whisperer/-/tree/main?ref_type=heads" target="_blank">GitHub</a>
+              <a href="#" target="_blank">Live Demo</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <img src="images/LinkedUP_cover.png" alt="LinkedUp Project Screenshot" class="project-image">
+            <h3>Linked Up</h3>
+            <p>
+              Full-stack Android application built using Kotlin that helps students connect based on shared interests,
+              featuring authentication, geologation, and real-time messaging.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/GraceTang323/LinkedUp" target="_blank">GitHub</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <img src="images/Loan_system_cover.webp" alt="Loan System Project Screenshot" class="project-image">
+            <h3>Loan Records System</h3>
+            <p>
+              Designed a fault-tolerant loan retrieval system using HDFS and Python to efficiently and reliably fetch and 
+              cache records from large-scale datasets.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/GraceTang323/HDFS" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 </body>
 </html>
