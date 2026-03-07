@@ -18,7 +18,7 @@
         <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="#about">About</a></div>
         <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="#skills">Skills</a></div>
         <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#projects">Projects</a></div>
-        <div class="contact-button"data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" ><a href="#">Contact</a></div>
+        <div class="contact-button"data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" ><a href="#contact">Contact</a></div>
       </div>
       <i class="fa-solid fa-bars hamburg" onclick= "hamburg()"></i>
     </div>
@@ -28,7 +28,7 @@
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="#">Contact</a>
+        <a href="#contact">Contact</a>
         <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
       </div>
     </div>
@@ -36,7 +36,7 @@
     <section>
       <div class="main-container">
         <div class="image" data-aos="zoom-in-right" data-aos-duration="1300" data-aos-delay="200">
-          <img src="images/temp_photo_square.png" alt="" width="400" height="400">
+          <img src="images/cover_bridge.jpg" alt="" width="400" height="400">
         </div>
         <div class="content">
           <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600">Hey there! I'm <span>Grace</span></h1>
@@ -46,12 +46,9 @@
           <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="900">
             <a href="https://github.com/GraceTang323" target="_blank"><i class="fa-brands fa-github"></i></a>
             <a href="https://www.facebook.com/grace.tang.919865/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" target="_blank"><i class="fa-brands fa-twitter"></i></a>
             <a href="https://www.linkedin.com/in/grace-tang-2b9a91384/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
           </div>
-          <div class="button" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1100">
-            <button>Download CV</button>
-          </div>
+          
         </div>
       </div>
     </section>
@@ -74,9 +71,9 @@
           <h1>About Me</h1>
           <div class="about-content">
             <p>
-              I'm a full-stack software engineer who goes with the flow. When faced with an obstacle, I'm confident I can always find another way around, whether it's slithering along with Python or stacking with JavaScript. 
-              As a part-time artist, I care a lot about the organization of layers, which reflects in my work. I'm comfortable working across the stack, writing clean, durable code under 
-              tight deadlines, and iterating quickly based on user and technical feedback. Outside the scope, you'll usually find me leisurely sketching, swimming with sharks, or touring new places abroad!
+              I'm a full-stack software engineer specializing in backend systems and data analysis. When faced with an obstacle, I'm confident I can always find another way around, whether it's slithering along with Python or stacking with JavaScript. 
+              As a part-time artist, I care a lot about the organization of layers, which reflects in my work. I'm comfortable working across the stack, designing clean, durable architecture, 
+              and iterating quickly based on user feedback. Outside the scope, you'll usually find me leisurely sketching, swimming with sharks, or touring new places abroad!
             </p>
             <b>Actively seeking internship or entry-level roles that'll allow me to apply my technical fundamentals and learn from production-grade teams.</b>
           </div>
@@ -145,7 +142,7 @@
             </p>
             <div class="project-links">
               <a href="https://git.doit.wisc.edu/KTREDDY2/arc-log-whisperer/-/tree/main?ref_type=heads" target="_blank">GitHub</a>
-              <a href="#" target="_blank">Live Demo</a>
+              <a href="#" onclick="openDemoModal(event)">Live Demo (Coming Soon)</a>
             </div>
           </div>
           <div class="project-card">
@@ -172,6 +169,82 @@
           </div>
         </div>
       </div>
+      <div id="demoModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeDemoModal()">&times;</span>
+          <h2>Demo Coming Soon</h2>
+          <p>
+            The Log Analyzer project is currently under active development. 
+            Stay tuned for updates and a live demo will be available soon!
+          </p>
+        </div>
+      </div>
+      <script>
+        function openDemoModal(event) {
+          event.preventDefault();
+          document.getElementById("demoModal").style.display = "block";
+        }
+        function closeDemoModal() {
+          document.getElementById("demoModal").style.display = "none";
+        }
+      </script>
+    </section>
+
+    <section id="contact">
+      <div class="contact-page">
+        
+        <h1>Contact Me!</h1>
+        <form action="https://formspree.io/f/xnjgnddd" method="POST" onsubmit="showConfirmation(event)">
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" name="name" required><br>
+
+          <label for="email">Email:</label><br>
+          <input type="text" id="email" name="email" required><br>
+
+          <label for="message">Message:</label><br>
+          <textarea name="message" id="message" placeholder="Write something funny..." style="height:200px" required></textarea><br>
+
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+      <div id="confirmationPopup" class="popup">
+        <div class="popup-content">
+          <span class="close" onclick="closePopup()">&times;</span>
+          <h2>Sent</h2>
+          <p>Thank You for Reaching Out! I'll get back to you soon</p>
+        </div>
+      </div>
+
+      <script>
+        function showConfirmation(event) {
+          event.preventDefault(); // prevent page reload
+
+          const form = event.target;
+
+          fetch(form.action, {
+            method: form.method,
+            body: new FormData(form),
+            headers: {
+              'Accept': 'application/json'
+            }
+          }).then(response => {
+            if (response.ok) {
+              openPopup();
+              form.reset();
+            } else {
+              alert("Oops! There was a problem submitting your form.");
+            }
+          }).catch(error => {
+            alert("Oops! There was a problem submitting your form.");
+          });
+        }
+        function openPopup() {
+          document.getElementById("confirmationPopup").classList.add("show"); // add class to trigger animation
+        }
+        function closePopup() {
+          document.getElementById("confirmationPopup").classList.remove("show"); // remove class to hide popup
+        }
+      </script>
     </section>
 </body>
 </html>
